@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light Theme Variables */
+:root {
+  --foreground: #0a2b58;
+  --background: #ffffff;
+
+  --black-icon: #000000;
+  --primary-color: #0a2b58;
+  --secondary-color: #0a2b58;
+
+  --white-bg: #ffffff;
+  --light-white-bg: #f5f6fa;
+  --light-white-color: #e0e3ee;
+
+  --scrollbar-bg: #f0f0f0;
+  --scrollbar-thumb: #0a2b58;
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+html {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg); /* Thumb and track colors */
+}
+
+/* Scrollbar Styles for WebKit Browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg); /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb); /* Thumb color */
+  border-radius: 10px; /* Rounded corners */
+  border: 1px solid var(--scrollbar-bg); /* Adds padding around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color); /* Thumb color on hover */
+}
+
+/* Dark Theme Variables */
+.dark {
+  --foreground: #ffffff;
+  --background: #2e2e2e;
+
+  --black-icon: #a5a5a6;
+  --primary-color: #138fff;
+  --secondary-color: #343437;
+
+  --white-bg: #138fff;
+  --light-white-bg: #343437;
+  --light-white-color: #8e9bb3;
+
+  --scrollbar-bg: #2e2e2e;
+  --scrollbar-thumb: #e0e3ee;
+}
+
+/* Dark Theme Overrides */
+.dark body {
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+
+/* Scrollbar Hiding for Specific Elements */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* required '*' sign */
+.required:after {
+  content: " *";
+  color: red;
+}
+
+/* button primary */
+
+.left-26 {
+  left: 6.5rem;
+}
+
+/* Custom Scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin; /* For Firefox */
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f3f4f6; /* Light gray */
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #9ca3af; /* Gray */
+  border-radius: 4px;
+}
+.scrollbar-thin:hover::-webkit-scrollbar-thumb {
+  background: #6b7280; /* Darker gray on hover */
+}
