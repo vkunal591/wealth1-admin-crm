@@ -14,7 +14,7 @@ const AuthGuard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   useEffect(() => {
     setStateReady(true);
     if (stateReady && token === null) router.push("/auth/login");
-    else if (token && pathname === "/") return router.push("/dashboard/home");
+    else if (token && pathname === "/") return router.push("/dashboard/pages");
     else return router.push(pathname);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token, stateReady]);

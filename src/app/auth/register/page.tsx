@@ -9,7 +9,7 @@ const Register: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push("/dashboard/home");
+    router.push("/dashboard/pages");
   };
 
   return (

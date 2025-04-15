@@ -45,7 +45,7 @@ const Users: React.FC = () => {
 
   useEffect(() => {
     const fetchpageListData = async () => {
-      const response: any = await Fetch(endpoints["Pages"].fetchAll);
+      const response: any = await Fetch(endpoints["Pages"].fetchAll,undefined,5000,true,false);
       if (response.success) {
         setPageList(response.data.result);
       }

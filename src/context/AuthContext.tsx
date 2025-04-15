@@ -29,7 +29,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
-    navigate.prefetch("/dashboard/home");
+    navigate.prefetch("/dashboard/pages");
   }, [navigate]);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
           setLoading(false);
           setToken(sharedToken);
           setUser(response?.data);
-          return navigate.replace("/dashboard/home");
+          return navigate.replace("/dashboard/pages");
         } else return navigate.replace("/auth/login");
       } catch (error) {
         setLoading(false);
@@ -61,7 +61,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     setToken(token);
     setUser(userData);
     localStorage.setItem("adminToken", token);
-    return navigate.push("/dashboard/home");
+    return navigate.push("/dashboard/pages");
   };
 
   const logout = () => {
